@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Unified Pay</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow">UNIFIED PAY / SANDBOX</p>
+      <h1>Satu checkout.<br><em>Dua jalur pembayaran.</em></h1>
+      <p class="lede">QRIS dan crypto dicatat sebagai satu order yang dapat dilacak dari checkout sampai settled.</p>
+    </section>
+    <section class="panel" aria-label="Checkout form">
+      <form id="checkout-form">
+        <label>Nominal order <span>Rupiah</span><input id="amount" name="amountIdr" type="number" min="1000" step="1000" value="50000" required></label>
+        <div id="quote" class="quote" aria-live="polite"></div>
+        <fieldset><legend>Metode pembayaran</legend><div class="methods"><label class="method"><input type="radio" name="paymentMethod" value="qris" checked><strong>QRIS</strong><small>Scan dari mobile banking</small></label><label class="method"><input type="radio" name="paymentMethod" value="crypto"><strong>Crypto</strong><small>USDT via invoice gateway</small></label></div></fieldset>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+        <button id="submit-button" type="submit">Buat instruksi pembayaran <span>→</span></button>
+      </form>
+      <div id="result" class="result" hidden></div>
+      <button id="reset-button" class="reset-button" type="button" hidden>Kembali ke checkout</button>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
